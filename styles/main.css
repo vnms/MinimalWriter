@@ -1,0 +1,40 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: arial, sans-serif;
+  background: #fff;
+}
+
+#area {
+  width: 70%;
+  padding: 10px;
+  height: 90%;
+  overflow: auto;
+  background: #eee;
+  outline: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: #111;
+  font-size: 20px !important;
+  font-family: serif !important;
+}
+
+#area * {
+  font-size: 20px !important;
+  font-family: serif !important;
+}
+
+.bottom {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+* {
+  transition: 200ms;
+}

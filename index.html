@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MinimalWriter</title>
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <div id="area" contenteditable>
+    </div>
+    <div class="bottom">
+      <a onclick="save()" style="cursor: pointer; text-decoration: underline; color: #0af">save</a>
+      <a onclick="lights()" style="cursor: pointer; text-decoration: underline; color: #0af">lights</a>
+    </div>
+    <script src="resources/FileSaver.js"></script>
+    <script src="resources/Blob.js"></script>
+    <script>
+      var LIGHTS = true;
+      var area = document.getElementById("area");
+
+      var first = "<!DOCTYPE HTML><html><head><meta charset='utf-8'><title>Document</title></head>"+
+      "<body style='font-size: 20px; font-family: serif; padding: 20px;'>";
+      var last = "</body></html>";
+
+      function save() {
+        var blob = new Blob([first
+        +area.innerHTML
+        +last], {type: "text/html;charset=utf-8"});
+        saveAs(blob, "Document.html");
+      }
+      function lights() {
+        if (LIGHTS === true) {
+          LIGHTS = false;
+          document.body.style.backgroundColor = "#000";
+          area.style.backgroundColor = "#111";
+          area.style.color = "#eee";
+        } else {
+          LIGHTS = true;
+          document.body.style.backgroundColor = "#FFF";
+          area.style.backgroundColor = "#eee";
+          area.style.color = "#111";
+        }
+      }
+    </script>
+  </body>
+</html>
